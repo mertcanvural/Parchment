@@ -1,0 +1,12 @@
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+    RewriteBase /
+
+    # Handle API requests separately
+    RewriteRule ^api/(.*)$ backend/public/$1 [L]
+
+    # Redirect all other requests to the frontend
+    RewriteCond %{REQUEST_FILENAME} !-f
+    RewriteCond %{REQUEST_FILENAME} !-d
+    RewriteRule ^(.*)$ frontend/$1 [L]
+</IfModule>

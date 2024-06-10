@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../styles.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <title>Add Flashcard</title>
+</head>
+<body>
+    <div id="navbar-placeholder"></div>
+
+    <div class="container">
+        <h1>Add Flashcard</h1>
+        <form id="add-form">
+            <div class="form-group">
+                <label for="deck">Deck:</label>
+                <select id="deck" class="form-control" required></select>
+            </div>
+            <div class="form-group">
+                <label for="question">Question:</label>
+                <input type="text" id="question" class="form-control" required>
+            </div>
+            <div class="form-group">
+                <label for="answer">Answer:</label>
+                <input type="text" id="answer" class="form-control" required>
+            </div>
+            <button type="submit" class="btn btn-primary">Add Flashcard</button>
+        </form>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            fetch('../get_navbar.php')
+                .then(response => response.text())
+                .then(data => {
+                    document.getElementById('navbar-placeholder').innerHTML = data;
+                });
+
+            fetch('../get_decks.php')
+                .then(response => response.json())
+                .then(data => {
+                    if (data.status === 'success') {
+                        const deckSelect = document.getElementById('deck');
+                        data.decks.forEach(deck => {
+                            const option = document.createElement('option');
+                            option.value = deck.DeckID;
+                            option.textContent = deck.DeckName;
+                            deckSelect.appendChild(option);
+                        });
+                    } else {
+                        alert(data.message);
+                    }
+                });
+
+            document.getElementById('add-form').addEventListener('submit', function (e) {
+                e.preventDefault();
+                const deckId = document.getElementById('deck').value;
+                const question = document.getElementById('question').value;
+                const answer = document.getElementById('answer').value;
+
+                fetch('../add_card.php', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({ deckId, question, answer }),
+                })
+                .then(response => response.json())
+                .then(data => {
+                    if (data.status === 'success') {
+                        alert('Flashcard added successfully');
+                        document.getElementById('add-form').reset();
+                    } else {
+                        alert(data.message);
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>

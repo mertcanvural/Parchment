@@ -1,0 +1,112 @@
+{
+    "packages": [
+        {
+            "name": "phpmailer/phpmailer",
+            "version": "6.5.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/PHPMailer/PHPMailer.git",
+                "reference": "9b18e1f6fa0c8a8c4c5c2ab7ffb843fb55bdeac1"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/PHPMailer/PHPMailer/zipball/9b18e1f6fa0c8a8c4c5c2ab7ffb843fb55bdeac1",
+                "reference": "9b18e1f6fa0c8a8c4c5c2ab7ffb843fb55bdeac1",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.5.0"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "PHPMailer\\PHPMailer\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "LGPL-2.1-only"
+            ],
+            "authors": [
+                {
+                    "name": "Marcus Bointon",
+                    "email": "phpmailer@synchromedia.co.uk",
+                    "homepage": "http://www.smartmessages.net",
+                    "role": "Maintainer"
+                },
+                {
+                    "name": "Jim Jagielski",
+                    "email": "jim@jaguNET.com",
+                    "role": "Contributor"
+                }
+            ],
+            "description": "PHPMailer is a full-featured email creation and transfer class for PHP",
+            "homepage": "https://github.com/PHPMailer/PHPMailer",
+            "keywords": [
+                "email",
+                "mime",
+                "smtp"
+            ],
+            "time": "2021-05-25T13:11:45+00:00"
+        },
+        {
+            "name": "vlucas/phpdotenv",
+            "version": "v5.4.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/vlucas/phpdotenv.git",
+                "reference": "a6f98e8297b9c48ba720fef95627d5a52b65b9bb"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/vlucas/phpdotenv/zipball/a6f98e8297b9c48ba720fef95627d5a52b65b9bb",
+                "reference": "a6f98e8297b9c48ba720fef95627d5a52b65b9bb",
+                "shasum": ""
+            },
+            "require": {
+                "php": "^7.1.3 || ^8.0",
+                "ext-filter": "*"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "^8.5.8 || ^9.3.3"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Dotenv\\": "src/"
+                },
+                "files": [
+                    "src/Dotenv.php"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "BSD-3-Clause"
+            ],
+            "authors": [
+                {
+                    "name": "Vance Lucas",
+                    "email": "vance@vancelucas.com"
+                }
+            ],
+            "description": "Loads environment variables from `.env` to `getenv()`, `$_ENV` and `$_SERVER` automagically.",
+            "homepage": "https://github.com/vlucas/phpdotenv",
+            "keywords": [
+                "env",
+                "environment",
+                "variables"
+            ],
+            "time": "2021-07-27T12:15:30+00:00"
+        }
+    ],
+    "packages-dev": [],
+    "aliases": [],
+    "minimum-stability": "stable",
+    "stability-flags": [],
+    "prefer-stable": false,
+    "prefer-lowest": false,
+    "platform": {
+        "php": "7.4.3"
+    },
+    "platform-dev": []
+}

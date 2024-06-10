@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Decks</title>
+    <link rel="stylesheet" href="../styles.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+</head>
+<body>
+    <div id="navbar-placeholder"></div>
+
+    <div class="container">
+        <h1>Your Decks</h1>
+        <button id="create-deck-button" class="btn btn-primary">Create Deck</button>
+        <ul id="deck-list"></ul>
+    </div>
+
+    <script>
+        // Load the navbar
+        fetch('../get_navbar.php')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('navbar-placeholder').innerHTML = data;
+            });
+
+        // Handle deck creation
+        document.getElementById('create-deck-button').addEventListener('click', function() {
+            const deckName = prompt('Enter new deck name:');
+            if (deckName) {
+                fetch('/../create_deck.php', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({ deckName: deckName })
+                })
+                .then(response => response.json())
+                .then(data => {
+                    if (data.status === 'success') {
+                        location.reload();
+                    } else {
+                        alert(data.message);
+                    }
+                });
+            }
+        });
+
+        // Load the decks
+        function loadDecks() {
+            fetch('/../get_decks.php')
+                .then(response => response.json())
+                .then(data => {
+                    const deckList = document.getElementById('deck-list');
+                    deckList.innerHTML = '';
+                    data.decks.forEach(deck => {
+                        const li = document.createElement('li');
+                        li.classList.add('list-group-item');
+                        li.innerHTML = `
+                            ${deck.DeckName}
+                            <div class="deck-actions">
+                                <button class="btn btn-secondary rename-deck" data-id="${deck.DeckID}">Rename</button>
+                                <button class="btn btn-danger delete-deck" data-id="${deck.DeckID}">Delete</button>
+                            </div>
+                        `;
+                        deckList.appendChild(li);
+                    });
+
+                    // Handle renaming decks
+                    document.querySelectorAll('.rename-deck').forEach(button => {
+                        button.addEventListener('click', function() {
+                            const deckId = this.getAttribute('data-id');
+                            const newName = prompt('Enter new deck name:');
+                            if (newName) {
+                                fetch('/../rename_deck.php', {
+                                    method: 'POST',
+                                    headers: {
+                                        'Content-Type': 'application/json'
+                                    },
+                                    body: JSON.stringify({ deckId: deckId, newName: newName })
+                                })
+                                .then(response => response.json())
+                                .then(data => {
+                                    if (data.status === 'success') {
+                                        location.reload();
+                                    } else {
+                                        alert(data.message);
+                                    }
+                                });
+                            }
+                        });
+                    });
+
+                    // Handle deleting decks
+                    document.querySelectorAll('.delete-deck').forEach(button => {
+                        button.addEventListener('click', function() {
+                            const deckId = this.getAttribute('data-id');
+                            if (confirm('Are you sure you want to delete this deck?')) {
+                                fetch('/../delete_deck.php', {
+                                    method: 'POST',
+                                    headers: {
+                                        'Content-Type': 'application/json'
+                                    },
+                                    body: JSON.stringify({ deckId: deckId })
+                                })
+                                .then(response => response.json())
+                                .then(data => {
+                                    if (data.status === 'success') {
+                                        location.reload();
+                                    } else {
+                                        alert(data.message);
+                                    }
+                                });
+                            }
+                        });
+                    });
+                });
+        }
+
+        loadDecks();
+    </script>
+</body>
+</html>
