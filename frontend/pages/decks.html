@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Decks</title>
+    <link rel="stylesheet" href="../css/layout.css">
+    <link rel="stylesheet" href="../css/navbar.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <style>
+        .deck-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px;
+            margin: 5px 0;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            background-color: #f9f9f9;
+        }
+
+        .deck-item:nth-child(even) {
+            background-color: #fff;
+        }
+
+        .deck-name {
+            font-weight: bold;
+            font-size: 1.2em;
+        }
+
+        .deck-actions button {
+            margin-left: 5px;
+        }
+
+        .container {
+            margin-top: 20px;
+        }
+
+        #deck-list {
+            margin-top: 50px;
+        }
+    </style>
+</head>
+<body>
+    <div id="navbar-placeholder"></div>
+    <div class="container">
+        <h1>Your Decks</h1>
+        <button id="create-deck-button" class="btn btn-primary pull-right">Create Deck</button>
+        <ul id="deck-list" class="list-group mt-3"></ul>
+    </div>
+    <script src="../js/navbar.js"></script>
+    <script src="../js/decks.js"></script>
+</body>
+</html>

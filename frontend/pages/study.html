@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Study Deck</title>
+    <link rel="stylesheet" href="../css/layout.css">
+    <link rel="stylesheet" href="../css/navbar.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <style>
+        .card-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 80vh;
+        }
+        .card {
+            text-align: center;
+        }
+        .answer {
+            margin-top: 20px;
+            border-top: 1px solid #ccc;
+            padding-top: 20px;
+        }
+        .buttons {
+            margin-top: 20px;
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div id="navbar-placeholder"></div>
+    <div class="container">
+        <h1 id="deck-title" class="text-left"></h1>
+        <div class="card-container">
+            <div id="card-content" class="card">
+                <p id="question"></p>
+                <button id="show-answer" class="btn btn-primary">Show Answer</button>
+                <div id="answer-container" class="answer" style="display: none;">
+                    <p id="answer"></p>
+                    <div class="buttons">
+                        <button id="easy" class="btn btn-success">Easy</button>
+                        <button id="hard" class="btn btn-danger">Hard</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="../js/navbar.js"></script>
+    <script src="../js/study.js"></script>
+</body>
+</html>

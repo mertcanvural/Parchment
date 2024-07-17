@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Import/Export</title>
+    <link rel="stylesheet" href="../css/layout.css">
+    <link rel="stylesheet" href="../css/navbar.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+</head>
+<body>
+    <div id="navbar-placeholder"></div>
+    <div class="container">
+        <h1>Import/Export</h1>
+        <div>
+            <h3>Export Deck</h3>
+            <form id="export-form">
+                <div class="form-group">
+                    <label for="export-deck">Select Deck:</label>
+                    <select id="export-deck" class="form-control"></select>
+                </div>
+                <div class="form-group">
+                    <label for="export-format">Select Format:</label>
+                    <select id="export-format" class="form-control">
+                        <option value="csv">CSV</option>
+                        <option value="json">JSON</option>
+                    </select>
+                </div>
+                <button type="button" id="export-button" class="btn btn-primary">Export</button>
+            </form>
+        </div>
+        <div>
+            <h3>Import Deck</h3>
+            <form id="import-form">
+                <div class="form-group">
+                    <label for="import-file">Select File:</label>
+                    <input type="file" id="import-file" class="form-control">
+                </div>
+                <div class="form-group">
+                    <label>Import Format:</label>
+                    <p>The imported file should have the following format:</p>
+                    <pre>
+CSV:
+Front,Back
+Question 1,Answer 1
+Question 2,Answer 2
+...
+
+JSON:
+[
+    {"Front": "Question 1", "Back": "Answer 1"},
+    {"Front": "Question 2", "Back": "Answer 2"},
+    ...
+]
+                    </pre>
+                </div>
+                <button type="button" id="import-button" class="btn btn-primary">Import</button>
+            </form>
+        </div>
+    </div>
+    <script src="../js/navbar.js"></script>
+    <script src="../js/import_export.js"></script>
+</body>
+</html>

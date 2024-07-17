@@ -1,0 +1,31 @@
+.category-section {
+    margin-bottom: 30px;
+}
+
+.category-list {
+    display: flex;
+    flex-direction: column;
+}
+
+.category {
+    margin-bottom: 10px;
+}
+
+.category h3 {
+    margin: 0;
+    font-size: 16px;
+    color: #007BFF;
+    cursor: pointer;
+}
+
+.category a {
+    display: block;
+    margin-top: 5px;
+    font-size: 14px;
+    color: #007BFF;
+    text-decoration: none;
+}
+
+.category a:hover {
+    text-decoration: underline;
+}

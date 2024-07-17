@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Share Deck</title>
+    <link rel="stylesheet" href="../css/layout.css">
+    <link rel="stylesheet" href="../css/navbar.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+</head>
+<body>
+    <div id="navbar-placeholder"></div>
+    <div class="container">
+        <h1>Share Deck</h1>
+        <form id="share-deck-form">
+            <input type="hidden" id="deck-id" name="deckId">
+            <div class="form-group">
+                <label for="deck-title">Title:</label>
+                <input type="text" class="form-control" id="deck-title" name="title" required>
+            </div>
+            <div class="form-group">
+                <label for="deck-category">Category:</label>
+                <select class="form-control" id="deck-category" name="category" required>
+                    <!-- Categories will be dynamically loaded -->
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="deck-description">Description:</label>
+                <textarea class="form-control" id="deck-description" name="description" rows="3" required></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary">Share Deck</button>
+        </form>
+    </div>
+    <script src="../js/navbar.js"></script>
+    <script src="../js/share_deck.js"></script>
+</body>
+</html>

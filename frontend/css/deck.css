@@ -1,0 +1,28 @@
+/* decks.css */
+.deck-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    margin: 5px 0;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+}
+
+.deck-item:nth-child(even) {
+    background-color: #fff;
+}
+
+.deck-name {
+    font-weight: bold;
+}
+
+.deck-actions button {
+    margin-left: 5px;
+}
+
+#deck-list {
+    padding-left: 0;
+    list-style-type: none;
+}

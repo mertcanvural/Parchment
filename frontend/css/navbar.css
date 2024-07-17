@@ -1,0 +1,17 @@
+.navbar {
+    background-color: #ffffff;
+    border-bottom: 1px solid #ddd;
+}
+
+.navbar-brand img {
+    max-height: 30px;
+    margin-top: -7px;  /* To align the logo properly */
+}
+
+.navbar-nav > li > a {
+    color: #333;
+}
+
+.navbar-nav > li > a:hover {
+    color: #007bff;
+}

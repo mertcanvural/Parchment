@@ -1,0 +1,12 @@
+/* deck_details.css */
+/* This file contains styles specific to the deck details page. */
+
+.deck-item {
+    display: flex;
+    justify-content: space-between;
+}
+
+.question,
+.answer {
+    margin: 20px 0;
+}

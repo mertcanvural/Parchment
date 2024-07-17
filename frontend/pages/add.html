@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Flashcard</title>
+    <link rel="stylesheet" href="../css/layout.css">
+    <link rel="stylesheet" href="../css/navbar.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+</head>
+<body>
+    <div id="navbar-placeholder"></div>
+    <div class="container">
+        <h1>Add Flashcard</h1>
+        <form id="add-card-form">
+            <div class="form-group">
+                <label for="deck">Deck:</label>
+                <select id="deck" class="form-control" required></select>
+            </div>
+            <div class="form-group">
+                <label for="question">Question:</label>
+                <input type="text" id="question" class="form-control" required>
+            </div>
+            <div class="form-group">
+                <label for="answer">Answer:</label>
+                <input type="text" id="answer" class="form-control" required>
+            </div>
+            <button type="submit" class="btn btn-primary">Add Flashcard</button>
+        </form>
+    </div>
+    <script src="../js/navbar.js"></script>
+    <script src="../js/add.js"></script>
+</body>
+</html>

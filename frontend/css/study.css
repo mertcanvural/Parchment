@@ -1,0 +1,33 @@
+/* study.css */
+/* This file contains styles specific to the study page. */
+
+.study-container {
+    text-align: center;
+    margin-top: 50px;
+}
+
+.question,
+.answer {
+    font-size: 2em;
+    margin-top: 20px;
+}
+
+.answer {
+    display: none;
+}
+
+.study-buttons {
+    margin-top: 20px;
+}
+
+.study-buttons .btn {
+    font-size: 1.5em;
+    width: 150px;
+    margin: 10px;
+}
+
+.study-complete {
+    text-align: center;
+    font-size: 2em;
+    margin-top: 20px;
+}
