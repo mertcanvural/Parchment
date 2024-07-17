@@ -15,7 +15,6 @@ Parchment is a full-stack web application designed to manage student flashcards.
 - Deck and flashcard management
 - Progress tracking
 - Collaborative environment for sharing and accessing decks
-- Responsive design for seamless usage across desktops, laptops, tablets, and smartphones
 
 ## Technologies Used
 
@@ -23,7 +22,6 @@ Parchment is a full-stack web application designed to manage student flashcards.
 - **Backend**: PHP, MySQL
 - **Database Management**: phpMyAdmin
 - **Testing**: PHPUnit, Selenium
-- **Frameworks**: React, Node.js, MongoDB for certain features
 
 ## Getting Started
 
@@ -33,7 +31,6 @@ Parchment is a full-stack web application designed to manage student flashcards.
 - MySQL
 - Apache or Nginx server
 - Composer (for PHP dependencies)
-- Node.js and npm (for frontend dependencies)
 - phpMyAdmin (optional, for database management)
 
 ### Installation
@@ -57,15 +54,8 @@ Parchment is a full-stack web application designed to manage student flashcards.
    composer install
    ```
 
-4. **Set up the frontend**:
-   - Ensure you have Node.js and npm installed.
-   - Navigate to the `frontend` directory and install dependencies:
-     ```bash
-     cd frontend
-     npm install
-     ```
 
-5. **Run the application**:
+4. **Run the application**:
    - Start your PHP server:
      ```bash
      php -S localhost:8000 -t backend/public
@@ -76,7 +66,7 @@ Parchment is a full-stack web application designed to manage student flashcards.
      npm start
      ```
 
-6. **Access the application**:
+5. **Access the application**:
    Open your browser and navigate to `http://localhost:8000` to view the application.
 
 ## Contributing
