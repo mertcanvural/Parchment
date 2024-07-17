@@ -72,23 +72,7 @@ Parchment is a full-stack web application designed to manage student flashcards.
 6. **Access the application**:
    Open your browser and navigate to `http://localhost:8000` to view the application.
 
-### Testing
-
-- **PHPUnit**: Run unit tests for the backend:
-  ```bash
-  cd backend
-  vendor/bin/phpunit
-  ```
-- **Selenium**: Ensure you have Selenium WebDriver set up and run the tests.
-
 ## Contributing
 
 Contributions are welcome! Please fork the repository and create a pull request with your changes. Make sure to follow the code style and include tests for any new features or bug fixes.
 
-## License
-
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
-
----
-
-Feel free to modify this template as needed to better fit your project specifics.
